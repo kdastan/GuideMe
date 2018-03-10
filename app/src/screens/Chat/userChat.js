@@ -7,33 +7,6 @@ class Chat extends Component {
     messages: [],
   }
 
-  handleRequest = (phrase) => {
-
-    const client = new ApiAiClient({
-      accessToken: 'af0501abc06549e0bc61cccc2c52165f'
-    })
-      .textRequest(phrase)
-      .then((response) => this.onReceive(response.result.fulfillment.speech))
-      .catch((error) => { console.log(error) })
-  }
-
-  // componentWillMount() {
-  //   this.setState({
-  //     messages: [
-  //       {
-  //         _id: 1,
-  //         text: 'Hello developer',
-  //         createdAt: new Date(),
-  //         user: {
-  //           _id: 2,
-  //           name: 'React Native',
-  //           avatar: require('../AssistMe/assets/images.png'),
-  //         },
-  //       },
-  //     ],
-  //   })
-  // }
-
   onReceive(text) {
     this.setState((previousState) => {
       return {
@@ -55,7 +28,6 @@ class Chat extends Component {
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }));
-    this.handleRequest(messages[0].text);
   }
 
   render() {
