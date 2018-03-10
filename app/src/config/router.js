@@ -20,7 +20,7 @@ const appTabs = TabNavigator(
       navigationOptions: () => ({
         tabBarLabel: 'Today',
         headerTitle: 'Today',
-        tabBarIcon: ({ tintColor }) => <Icon name="mail" size={20} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => <Icon name="align-center" size={20} color={tintColor} />
       })
     },
     AssistMe: {
@@ -28,7 +28,7 @@ const appTabs = TabNavigator(
       navigationOptions: () => ({
         tabBarLabel: 'Assist Me',
         headerTitle: 'Assist Me',
-        tabBarIcon: ({ tintColor }) => <Icon name="mail" size={20} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => <Icon name="message-square" size={20} color={tintColor} />
       })
     }
   },
@@ -82,7 +82,7 @@ const Router = StackNavigator(
     navigationOptions: {
       headerStyle: {
         statusBarStyle: 'light-content',
-        backgroundColor: '#1997a8'
+        backgroundColor: '#1787FB'
       },
       headerTitleStyle: {
         color: 'white'

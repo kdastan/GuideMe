@@ -3,8 +3,14 @@ import { GiftedChat } from 'react-native-gifted-chat';
 import { ApiAiClient } from "api-ai-javascript";
 
 class Chat extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.title}`,
+    headerTitleStyle: { textAlign: 'center', alignSelf: 'center' },
+  });
+
   state = {
     messages: [],
+    user: true
   }
 
   onReceive(text) {
@@ -17,7 +23,7 @@ class Chat extends Component {
           user: {
             _id: 2,
             name: 'React Native',
-            avatar: require('../AssistMe/assets/images.png')
+            avatar: require('../AssistMe/assets/Islam.png')
           },
         }),
       };
@@ -30,11 +36,21 @@ class Chat extends Component {
     }));
   }
 
+  swithcer = (messages) => {
+    if (this.state.user) {
+      this.onSend(messages);
+      this.setState({ user: false });
+    } else {
+      this.onReceive(messages[0].text);
+      this.setState({ user: true });
+    }
+  }
+
   render() {
     return (
       <GiftedChat
         messages={this.state.messages}
-        onSend={messages => this.onSend(messages)}
+        onSend={messages => this.swithcer(messages)}
         user={{
           _id: 1,
         }}

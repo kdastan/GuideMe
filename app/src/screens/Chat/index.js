@@ -3,6 +3,11 @@ import { GiftedChat } from 'react-native-gifted-chat';
 import { ApiAiClient } from "api-ai-javascript";
 
 class Chat extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: `Jarvis`,
+    headerTitleStyle: { textAlign: 'center', alignSelf: 'center' },
+  });
+
   state = {
     messages: [],
   }
