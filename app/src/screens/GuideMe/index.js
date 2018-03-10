@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, StyleSheet, Image } from 'react-native';
+import { FlatList, StyleSheet, Image, YellowBox } from 'react-native';
 import Card from '../../components/Card';
 
 import dummyData from '../../dummyData/dummyData.json';
@@ -12,17 +12,24 @@ const images = [
 ]
 
 class GuideMe extends Component {
+  componentWillMount() {
+    YellowBox.ignoreWarnings([
+      'Warning: componentWillMount is deprecated',
+      'Warning: componentWillReceiveProps is deprecated',
+    ]);
+  }
+
   renderCards = (item, index) => {
-		return <Card key={index} img={images[index]} info={item} move={this.props.navigation} />
-	};
+    return <Card key={index} img={images[index]} info={item} move={this.props.navigation} />
+  };
   render() {
     return (
-      <FlatList 					
+      <FlatList
         style={styles.container}
         data={dummyData.tours}
         renderItem={({ item, index }) => this.renderCards(item, index)}
         keyExtractor={(item) => item.title}
-        ItemSeparatorComponent={this.renderSeparator}/>
+        ItemSeparatorComponent={this.renderSeparator} />
     );
   }
 }
