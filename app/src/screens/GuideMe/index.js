@@ -1,12 +1,37 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { FlatList, StyleSheet, Image } from 'react-native';
+import Card from '../../components/Card';
+
+import dummyData from '../../dummyData/dummyData.json';
+
+const images = [
+  require("../../../assets/shymbulak.jpg"),
+  require("../../../assets/medeo.jpg"),
+  require("../../../assets/kok_tobe.jpg"),
+  require("../../../assets/charyn.jpg")
+]
 
 class GuideMe extends Component {
+  renderCards = (item, index) => {
+		return <Card key={index} img={images[index]} info={item} move={this.props.navigation} />
+	};
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: 'yellow' }} />
+      <FlatList 					
+        style={styles.container}
+        data={dummyData.tours}
+        renderItem={({ item, index }) => this.renderCards(item, index)}
+        keyExtractor={(item) => item.title}
+        ItemSeparatorComponent={this.renderSeparator}/>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 15,
+  }
+})
 
 export default GuideMe;

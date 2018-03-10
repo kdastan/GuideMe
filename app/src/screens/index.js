@@ -3,11 +3,13 @@ import Today from './Today';
 import AssistMe from './AssistMe';
 import Chat from './Chat';
 import UserChat from './Chat/userChat'
+import DetailView from './DetailView';
 
 export {
   GuideMe,
   Today,
   AssistMe,
   Chat,
-  UserChat
+  UserChat,
+  DetailView
 };
