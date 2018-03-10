@@ -2,7 +2,7 @@ import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
 
-import { GuideMe, Today, AssistMe } from '../screens';
+import { GuideMe, Today, AssistMe, Chat } from '../screens';
 
 const appTabs = TabNavigator(
   {
@@ -70,6 +70,9 @@ const Router = StackNavigator(
   {
     appTabs: {
       screen: appTabs
+    },
+    Chat: {
+      screen: Chat
     }
   },
   {
