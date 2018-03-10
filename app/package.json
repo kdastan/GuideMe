@@ -9,10 +9,12 @@
   "dependencies": {
     "react": "^16.3.0-alpha.1",
     "react-native": "0.54.0",
+    "react-native-gifted-chat": "^0.4.1",
     "react-native-vector-icons": "^4.5.0",
     "react-navigation": "^1.5.1"
   },
   "devDependencies": {
+    "api-ai-javascript": "^2.0.0-beta.21",
     "babel-jest": "22.4.1",
     "babel-preset-react-native": "4.0.0",
     "jest": "22.4.2",
