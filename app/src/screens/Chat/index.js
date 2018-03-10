@@ -17,22 +17,22 @@ class Chat extends Component {
       .catch((error) => { console.log(error) })
   }
 
-  // componentWillMount() {
-  //   this.setState({
-  //     messages: [
-  //       {
-  //         _id: 1,
-  //         text: 'Hello developer',
-  //         createdAt: new Date(),
-  //         user: {
-  //           _id: 2,
-  //           name: 'React Native',
-  //           avatar: require('../AssistMe/assets/images.png'),
-  //         },
-  //       },
-  //     ],
-  //   })
-  // }
+  componentWillMount() {
+    this.setState({
+      messages: [
+        {
+          _id: 1,
+          text: 'Hello traveller, I can help you in your trip. Type me, sometimes :)',
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'React Native',
+            avatar: require('../AssistMe/assets/images.png'),
+          },
+        },
+      ],
+    })
+  }
 
   onReceive(text) {
     this.setState((previousState) => {

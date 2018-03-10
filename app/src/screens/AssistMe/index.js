@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, Image, TouchableOpacity, StatusBar } from 'react-native';
 
 class AssistMe extends Component {
   renderRow = (item) => {
@@ -30,6 +30,7 @@ class AssistMe extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: 'white', paddingLeft: 10 }}>
+        <StatusBar barStyle="light-content" />
         <FlatList
           ListHeaderComponent={this.renderRow()}
           data={[{ key: 'Иван Крепак' }, { key: 'Мурат Мусса' }, { key: 'Жаксылык Жанабаева' }]}
