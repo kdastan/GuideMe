@@ -20,8 +20,8 @@ class GuideMe extends Component {
   }
 
   renderCards = (item, index) => {
-		return <Card key={index} img={images[index]} info={item} move={this.props.navigation} root={'DetailView'}/>
-	};
+    return <Card key={index} img={images[index]} info={item} move={this.props.navigation} root={'DetailView'} />
+  };
 
   render() {
     return (
@@ -29,8 +29,8 @@ class GuideMe extends Component {
         style={styles.container}
         data={dummyData.tours}
         renderItem={({ item, index }) => this.renderCards(item, index)}
-        keyExtractor={(item, index) => index}
-        ItemSeparatorComponent={this.renderSeparator}/>
+        keyExtractor={(item, index) => item.title}
+        ItemSeparatorComponent={this.renderSeparator} />
     );
   }
 }
