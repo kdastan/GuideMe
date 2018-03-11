@@ -87,7 +87,6 @@ const Router = StackNavigator(
   {
     navigationOptions: {
       headerStyle: {
-        statusBarStyle: 'light-content',
         backgroundColor: '#1787FB'
       },
       headerTitleStyle: {
