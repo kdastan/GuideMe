@@ -70,7 +70,7 @@ export default class DetailView extends Component {
                         <View style={{ flex: 2, backgroundColor: '#1787FB', borderRadius: 10, marginBottom: 5 }}>
                             <Button onPress={() => this.showActionSheet()} title="Связаться с гидом" color="white" />
                         </View>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Buy')}>
                             <View style={{
                                 width: window.width - 10,
                                 height: 40,

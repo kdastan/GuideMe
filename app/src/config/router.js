@@ -2,7 +2,7 @@ import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
 
-import { GuideMe, Today, AssistMe, DetailView, EventView, Chat, UserChat } from '../screens';
+import { GuideMe, Today, AssistMe, DetailView, EventView, Chat, UserChat, Buy } from '../screens';
 
 const appTabs = TabNavigator(
   {
@@ -82,6 +82,9 @@ const Router = StackNavigator(
     },
     EventView: {
       screen: EventView
+    },
+    Buy: {
+      screen: Buy
     }
   },
   {
