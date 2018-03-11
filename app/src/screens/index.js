@@ -3,7 +3,7 @@ import Today from './Today';
 import AssistMe from './AssistMe';
 import Chat from './Chat';
 import UserChat from './Chat/userChat'
-import DetailView from './DetailView';
+import { DetailView, EventView } from './DetailView';
 
 export {
   GuideMe,
@@ -11,5 +11,6 @@ export {
   AssistMe,
   Chat,
   UserChat,
-  DetailView
+  DetailView,
+  EventView
 };
