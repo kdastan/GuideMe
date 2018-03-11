@@ -16,6 +16,8 @@ export default class DetailView extends Component {
                 break;
             case 1:
                 console.log(btnIndex, 'BTN_INDEX');
+                const { info } = this.props.navigation.state.params;
+                this.props.navigation.navigate('UserChat', { title: info.name });
                 break;
             case 2:
                 console.log(btnIndex, 'BTN_INDEX');
