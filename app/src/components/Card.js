@@ -4,12 +4,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export default class Card extends Component{
-    nav = (info, img) => {
-        this.props.move.navigate('DetailView', {info, img});
+    nav = (info, img, root) => {
+        this.props.move.navigate(root, {info, img});
     }
     render(){
         return(
-            <TouchableOpacity onPress={() => this.nav(this.props.info, this.props.img)}>
+            <TouchableOpacity onPress={() => this.nav(this.props.info, this.props.img, this.props.root)}>
             <View style={styles.container}>
                 <View style={styles.background}/>
                 <Image style={styles.image} source={this.props.img}/>
@@ -17,11 +17,11 @@ export default class Card extends Component{
                     <View style={styles.titleContainer}>
                     <View style={{flex:1, flexDirection: 'row'}}>
                     <View style={{flex: 5}}>
-                        <Text style={styles.text}>{this.props.info.title}</Text>
+                        <Text numberOfLines={2} style={styles.text}>{this.props.info.title}</Text>
                         </View>
                         <View style={{flex: 5, alignItems: 'flex-end'}}>
                         <Text style={styles.text}>{this.props.info.time}</Text>
-                        <Text style={styles.text}>{`${this.props.info.price} тенге`}</Text>
+                        <Text style={styles.text}>{this.props.info.price}</Text>
                         </View>
                     </View>
                     </View>
