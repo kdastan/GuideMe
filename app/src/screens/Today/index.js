@@ -11,16 +11,16 @@ const images = [
 ]
 class Today extends Component {
   renderCards = (item, index) => {
-    return <Card key={index} img={images[index]} info={item} move={this.props.navigation} root={'EventView'}/>
+    return <Card key={index} img={images[index]} info={item} move={this.props.navigation} root={'EventView'} />
   };
   render() {
     return (
-      <FlatList 
+      <FlatList
         style={styles.container}
         data={dummyData.events}
         renderItem={({ item, index }) => this.renderCards(item, index)}
-        keyExtractor={(item, index) => index}
-        ItemSeparatorComponent={this.renderSeparator}/>
+        keyExtractor={(item, index) => item.title}
+        ItemSeparatorComponent={this.renderSeparator} />
     );
   }
 }
